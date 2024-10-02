@@ -1,0 +1,30 @@
+---
+const imageFiles = await Astro.glob(
+  "/src/assets/images/*.{png,jpg,jpeg,gif,webp}"
+);
+
+const images = imageFiles.map((file, idx) => ({
+  src: file.default,
+  alt: `image${idx}`, // Extract filename without extension as alt text
+}));
+---
+
+<div class="flex flex-col m-10 mt-20">
+  <div>
+    <p
+      class="text-[400%] mt-auto bg-gradient-to-b from-stone-200 to-transparent bg-clip-text text-transparent"
+    >
+      Gallery
+    </p>
+    <div>
+      <div class="grid grid-cols-3 gap-5">
+        {
+          images.map((image) => {
+            console.log(image);
+            return <img src={image.src.src} alt="" class=" my-3 w-full " />;
+          })
+        }
+      </div>
+    </div>
+  </div>
+</div>
