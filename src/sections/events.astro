@@ -2,15 +2,53 @@
 import Eventcard from "./../components/eventcard.astro";
 
 let d = new Date();
-let events = [{title : "Event name 1",imageUrl :"",dateTime : `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}` }]
+let events = [
+  {
+    title: "Event name 1",
+    imageUrl: "",
+    dateTime: `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`,
+  },
+  {
+    title: "Event name 1",
+    imageUrl: "",
+    dateTime: `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`,
+  },
+  {
+    title: "Event name 1",
+    imageUrl: "",
+    dateTime: `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`,
+  },
+  {
+    title: "Event name 1",
+    imageUrl: "",
+    dateTime: `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`,
+  },
+  {
+    title: "Event name 1",
+    imageUrl: "",
+    dateTime: `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`,
+  },
+  {
+    title: "Event name 1",
+    imageUrl: "",
+    dateTime: `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`,
+  },
+];
 ---
-<div  class="flex flex-col m-10 mt-20">
-<div><p class="text-[400%] mt-auto bg-gradient-to-b from-stone-200 to-transparent bg-clip-text text-transparent">Events</p></div>
-<div>
+
+<div class="flex flex-col m-10 mt-20">
+  <div>
+    <p
+      class="text-[400%] mt-auto bg-gradient-to-b from-stone-200 to-transparent bg-clip-text text-transparent"
+    >
+      Events
+    </p>
+  </div>
+  <div class="flex flex-row min-w-full gap-x-4 overflow-x-scroll no-scrollbar">
     {
-        events.map((event ,idx)=>{
-            return <Eventcard eventDetails = {event}/>
-        })
+      events.map((event, idx) => {
+        return <Eventcard eventDetails={event} />;
+      })
     }
-</div>
+  </div>
 </div>
