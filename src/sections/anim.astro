@@ -208,7 +208,7 @@ const options: ISourceOptions = {
       },
     },
     stroke: { width: 0 },
-    zIndex: { value: 0, opacityRate: 1, sizeRate: 1, velocityRate: 1 },
+    zIndex: { value: -1, opacityRate: 1, sizeRate: 1, velocityRate: 1 },
     destroy: {
       bounds: {},
       mode: "none",
@@ -266,7 +266,7 @@ const options: ISourceOptions = {
       blink: false,
       color: { value: "#ffffff" },
       consent: false,
-      distance: 30,
+      distance: 80,
       enable: true,
       frequency: 1,
       opacity: 0.4,
@@ -301,7 +301,7 @@ const options: ISourceOptions = {
     enable: true,
     inline: { arrangement: "equidistant" },
     move: { radius: 10, type: "path" },
-    scale: 0.5,
+    scale: 2,
     type: "inline",
     url: "https://particles.js.org/images/smalldeer.svg",
     position: { x: 50, y: 50 },
@@ -327,5 +327,6 @@ const options: ISourceOptions = {
     console.log("particlesLoaded callback");
   };
 </script>
-
-<Particles id="tsparticles" options={options} init="particlesInit" />
+<div class="w-0">
+  <Particles id="tsparticles" options={options} init="particlesInit" />
+</div>
